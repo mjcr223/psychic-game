@@ -1,4 +1,7 @@
-var psychicChoices = ["a","b","c","d","e","f","g","h","i","j","k"];
+
+
+
+var choices = ["a","b","c","d","e","f","g","h","i","j","k"];
 
 var wins = 0;
 var losses = 0;
@@ -6,18 +9,14 @@ var remainingGuesses = 9;
 var guessedLetters = [];
 
 
-var directionsText = document.getElementById("directions-text");
-var playerChoices = document.getElementById("playerschoice-text");
-var psychicChoices = document.getElementById("psychicchoices-text");
-var winsText = document.getElementById("wins-text");
-var lossesText = document.getElementById("losses-text");
+
 
 
 document.onkeyup = function(event){
     var userGuess = event.key;
     guessedLetters.push(userGuess);
-    var psychicChoices = psychicChoices[Math.floor(math.random() * 
-    psychicChoices.length)];
+    var psychicChoices = choices[Math.floor(Math.random() * 
+    choices.length)];
     
     
     if (userGuess === psychicChoices) {
@@ -37,10 +36,6 @@ document.onkeyup = function(event){
     }
         
     
-        directionsText.textContent = "";
-        playerChoices.textContent = "you chose: " + playersChoices;
-        winsText.textContent = "wins: " + wins;
-        lossesText.textContent = "losses: " + losses;
 
     var html = 
         "<h1> Psychic Game</h1>" +
@@ -51,10 +46,11 @@ document.onkeyup = function(event){
         "<p>Your Guesses: " + guessedLetters.join(", ");
 
         document.body.innerHTML = html;
+};
         
 
         
 
     
 
-};
+
